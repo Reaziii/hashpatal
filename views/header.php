@@ -23,16 +23,19 @@
 
     <?php else : ?>
         <div class="dropdown">
-            <div class="dropdown-toggle ab-xx" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="dropdown-toggle ab-xx" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <div class="profile-pic">
                     <img src="<?php echo $_SESSION["profilePicture"] ?>" alt="">
                 </div>
 
                 <?php echo $_SESSION["name"] ?>
-            </div>
+            </button>
             <ul class="dropdown-menu abc-yy">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <?php
+                if ($_SESSION["admin"]) :
+                ?>
+                    <li><a class="dropdown-item" href="/admin">Admin Pannel</a></li>
+                <?php endif; ?>
                 <li><a href="/logout" class="dropdown-item" href="#">Logout</a></li>
             </ul>
         </div>

@@ -12,6 +12,11 @@
 a {
   text-decoration: none;
 }
+button{
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
 
 .header {
   height: 70px;
@@ -182,7 +187,136 @@ input {
 .ab-xx{
     display: flex;
     align-items: center;
+    border: none;
+    outline: none;
+    background-color: transparent;
 }
 .abc-yy{
     right: 0;
+}
+
+.dash-nav{
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  background-color:#384846;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.dash-nav .logo{
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.dash-nav .logo img{
+  height: 40px;
+  width: 40px;
+  border-radius: 4px;
+}
+.dash-nav .logo h1{
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0;
+  margin-left: 10px;
+  color: white;
+}
+
+.dash-nav .menu-itemss{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin-top: 40px;
+}
+
+.dash-nav .menu-itemss button{
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 5px;
+  box-sizing: border-box;
+  height: 35px;
+  align-items: center;
+  font-weight: 200;
+  border-radius: 4px;
+  color: white;
+}
+
+.dashboard{
+  width: calc(100% - 250px);
+  float: right;
+  padding: 24px;
+  box-sizing: border-box;
+
+}
+.dashboard .title{
+  font-weight: bolder;
+  font-size: 25px;
+  color: black;
+}
+
+.dashboard .add-box{
+  width: 40%;
+  box-sizing: border-box;
+}
+.add-box{
+  margin-top: 40px;
+}
+
+.add-box input{
+  margin-bottom: 20px;
+}
+
+.dash-nav .menu-itemss button svg{
+  fill: white;
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+
+.dash-nav .profile{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+.dash-nav .profile img{
+  height: 40px;
+  width: 40px;
+  border-radius: 40px;
+}
+
+.dash-nav .profile .text p{
+  font-size: 12px;
+  margin: 0;
+  color: rgb(211, 211, 211);
+  padding: 0 4px;
+  box-sizing: border-box;
+}
+
+.dash-nav .profile a{
+  fill: white;
+  height: 30px;
+  width: 30px;
+}
+.dash-nav .profile a svg{
+  height: 100%;
+  width: 100%;
+}
+
+.delete-button{
+  color: #f8442e;
+
+}
+.table .action{
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }

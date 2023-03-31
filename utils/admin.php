@@ -103,3 +103,35 @@ function getAllSpecialities()
         return array();
     }
 }
+
+
+function deleteDoctor($id)
+{
+    try {
+        mysqli_query(conn, "DELETE FROM doctors WHERE id=$id");
+        return returnMessage("success", "Deleted Successfully");
+    } catch (Exception $err) {
+        return returnMessage("error", "Something went wrong!");
+    }
+}
+
+
+function AddDoctor($name, $email, $password, $image, $specialization, $education, $phone, $gender)
+{
+    $profilePicture = upload($image);
+    if ($profilePicture == "error") {
+        return returnMessage("error", "image upload failed!");
+    }
+    try {
+        if (mysqli_num_rows(mysqli_query(conn, "SELECT * FROM doctors WHERE email='$email' || phone='$phone'"))) {
+            return returnMessage("error", "Email or Phone already exists");
+        }
+        $password = md5($password);
+        $sql = "INSERT INTO doctors(name, email, password, profilePicture, specialization, education, phone, gender) VALUES ('$name','$email','$password','$profilePicture',$specialization,'$education','$phone','$gender')";
+        mysqli_query(conn, $sql);
+        return returnMessage("success", "Doctor Added Successfully");
+    } catch (Exception $err) {
+        echo $err;
+        return returnMessage("error", "Something went wrong!");
+    }
+}

@@ -135,7 +135,7 @@ section {
   box-sizing: border-box;
 }
 
-input {
+input, select {
   height: 35px;
   width: 100%;
   border: 1px solid black;
@@ -264,7 +264,7 @@ input {
   margin-top: 40px;
 }
 
-.add-box input{
+.add-box input, .add-box select{
   margin-bottom: 20px;
 }
 
@@ -319,4 +319,8 @@ input {
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+.form-select{
+  outline: none;
 }

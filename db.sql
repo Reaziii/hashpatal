@@ -43,3 +43,17 @@ CREATE TABLE IF NOT EXISTS doctors(
     gender VARCHAR(255) NOT NULL,
     PRIMARY KEY(id)
 );
+
+CREATE TABLE IF NOT EXISTS assistants(
+    id int(10) NOT NULL AUTO_INCREMENT,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    profilePicture VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    docid int(10) NOT NULL,
+    FOREIGN KEY(docid) REFERENCES doctors(id),
+    education VARCHAR(255) NOT NULL,
+    phone VARCHAR(255) NOT NULL,
+    gender VARCHAR(255) NOT NULL,
+    PRIMARY KEY(id)
+);

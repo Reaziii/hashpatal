@@ -12,3 +12,5 @@ any("/admin/add-admin", "views/admin/add-admin.php");
 any("/admin/change-password", "views/admin/change-password.php");
 any("/admin/specialities", "views/admin/specialities.php");
 any("/admin/add-doctor", "views/admin/add-doctor.php");
+any("/admin/add-assistant", "views/admin/add-assistant.php");
+

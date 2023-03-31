@@ -135,3 +135,22 @@ function AddDoctor($name, $email, $password, $image, $specialization, $education
         return returnMessage("error", "Something went wrong!");
     }
 }
+function AddAssistant($name, $email, $password, $image, $docid, $education, $phone, $gender)
+{
+    $profilePicture = upload($image);
+    if ($profilePicture == "error") {
+        return returnMessage("error", "image upload failed!");
+    }
+    try {
+        if (mysqli_num_rows(mysqli_query(conn, "SELECT * FROM assistants WHERE email='$email' || phone='$phone'"))) {
+            return returnMessage("error", "Email or Phone already exists");
+        }
+        $password = md5($password);
+        $sql = "INSERT INTO assistants(name, email, password, profilePicture, docid, education, phone, gender) VALUES ('$name','$email','$password','$profilePicture',$docid,'$education','$phone','$gender')";
+        mysqli_query(conn, $sql);
+        return returnMessage("success", "Assistant Added Successfully");
+    } catch (Exception $err) {
+        echo $err;
+        return returnMessage("error", "Something went wrong!");
+    }
+}

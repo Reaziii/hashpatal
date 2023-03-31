@@ -11,7 +11,7 @@
                 <?php echo $__add_doctor ?> Add Doctor</button></a>
         <a href="/admin/specialities"><button>
                 <?php echo $__speciality ?>Speciality</button></a>
-        <a href="/admin"><button>Dashboard</button></a>
+        <a href="/admin/add-assistant"><button><?php echo $__add_assistant ?>Add Assistant</button></a>
         <a href="/admin/change-password"><button>
                 <?php echo $__change_password; ?>Change password</button></a>
     </div>

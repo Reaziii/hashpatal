@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+:root {
+  --color1: #3292af;
+  --font1: "Open Sans", sans-serif;
+  --warning: #f8442e;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+
+.header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 100px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  background-color: white;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+}
+.header .logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.header .logo img {
+  height: 100%;
+  width: 100%;
+}
+.header h1 {
+  margin-left: 10px;
+  font-size: 25px;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.menu-items {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+}
+.menu-items li a {
+  color: black;
+  font-weight: 200;
+}
+.menu-items li {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.header .left-side {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.button-1 {
+  font-size: 16px;
+  padding: 5px 40px;
+  background-color: var(--color1);
+  border: none;
+  outline: none;
+  color: white;
+  font-weight: 200;
+}
+.landing-page {
+  height: 100vh;
+  width: 100%;
+  background-color: #193748;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+section {
+  padding: 100px;
+  box-sizing: border-box;
+}
+.landing-page .hero-pic {
+  height: 70%;
+  position: absolute;
+  right: 100px;
+  bottom: 0;
+}
+.landing-page .landing-text {
+  color: white;
+  width: 50%;
+}
+.landing-page .landing-text h1 {
+  font-weight: bold;
+  font-size: 50px;
+}
+.landing-page .landing-text p {
+  color: #667c88;
+  margin-top: 25px;
+  font-size: 14px;
+}
+
+.landing-page a {
+  background-color: #efb969;
+  border: none;
+  outline: none;
+  padding: 10px 30px;
+  color: #4c4c4c;
+  font-weight: bolder;
+  position: absolute;
+  bottom: 100px;
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  border: 1px solid var(--color1);
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+input {
+  height: 35px;
+  width: 100%;
+  border: 1px solid black;
+  outline: none;
+  padding: 5px;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 200;
+}
+.level {
+  font-size: 16px;
+  margin: 0;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.login-box input {
+  margin-bottom: 30px;
+}
+.login-box h1 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #120907;
+}
+.login-box button {
+  width: 100%;
+  height: 40px;
+  font-weight: bolder;
+}
+
+.error {
+  color: var(--warning);
+  height: 10px;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+
+.header .dropdown .profile-pic{
+    height: 40px;
+    width: 40px;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+.header .dropdown .profile-pic img{
+    height: 100%;
+    width: 100%;
+}
+.ab-xx{
+    display: flex;
+    align-items: center;
+}
+.abc-yy{
+    right: 0;
+}

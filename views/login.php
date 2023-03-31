@@ -1,6 +1,10 @@
 <?php
 $type = "user";
 include ROOT . '/utils/admin.php';
+include ROOT . '/utils/doctors.php';
+include ROOT . '/utils/assistant.php';
+
+
 checkLogin();
 $err = "";
 if (isset($_GET["type"])) {
@@ -11,13 +15,22 @@ if (isset($_GET["type"])) {
     } else if ($_GET["type"] == "doctor") {
         $type = "doctor";
     }
-
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["email"]) && isset($_POST["password"])) {
         if ($type == "admin") {
             if (!adminLogin()) {
                 $err = "Incorrect Information!";
+            }
+        }
+        if ($type == "doctor") {
+            if (!doctorLogin()) {
+                $err = "Incorrect Information!";
+            }
+        }
+        if ($type == "assistant") {
+            if (!assistantLogin()) {
+                $err = "Incorrect Information";
             }
         }
     }

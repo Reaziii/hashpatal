@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +7,7 @@
     <title>Document</title>
     <?php include ROOT . '/includes.php' ?>
 </head>
+
 <body>
     <?php include ROOT . '/views/header.php' ?>
     <section class="landing-page">

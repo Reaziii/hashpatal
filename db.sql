@@ -27,7 +27,7 @@ WHERE
 CREATE TABLE IF NOT EXISTS specialities (
     id int(10) NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
-    PRIMARY KEY(id,name)
+    PRIMARY KEY(id, name)
 );
 
 CREATE TABLE IF NOT EXISTS doctors(
@@ -55,5 +55,17 @@ CREATE TABLE IF NOT EXISTS assistants(
     education VARCHAR(255) NOT NULL,
     phone VARCHAR(255) NOT NULL,
     gender VARCHAR(255) NOT NULL,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE IF NOT EXISTS users(
+    id int(10) NOT NULL AUTO_INCREMENT,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    profilePicture VARCHAR(255) DEFAULT "/uploads/user.svg",
+    name VARCHAR(255) NOT NULL,
+    phone VARCHAR(255) NOT NULL,
+    gender VARCHAR(255) NOT NULL,
+    address VARCHAR(255) NOT NULL,
     PRIMARY KEY(id)
 );

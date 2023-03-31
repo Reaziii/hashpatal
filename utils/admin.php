@@ -40,11 +40,13 @@ function addAdmin($name, $email, $password, $profilePicture)
         return array("error" => "Email Already exists");
     }
     try {
+        $temp = $password;
         $password = md5($password);
         mysqli_query(conn, "INSERT INTO admins(email, password, name, profilePicture) VALUES('$email','$password','$name','$filename')");
+        $msg = "Hi $name,<br/>Your Hashpatal Admin - <br/>email : $email<br/>password : $temp ";
+        sendMail($email, "Your login credintial - Hashpatal", $msg);
         return array("success" => "Admin added");
     } catch (Exception $err) {
-        echo $err;
         return array("error" => "Something went wrong");
     }
 }
@@ -58,6 +60,7 @@ function AdminchangePassword($oldpassword, $newpassword)
         $password = md5($newpassword);
         try {
             mysqli_query(conn, "UPDATE admins SET password='$password' WHERE email='$email'");
+
             return array('success' => "Password Changed");
         } catch (Exception $err) {
             return array("error" => "Something went wrong");
@@ -126,9 +129,12 @@ function AddDoctor($name, $email, $password, $image, $specialization, $education
         if (mysqli_num_rows(mysqli_query(conn, "SELECT * FROM doctors WHERE email='$email' || phone='$phone'"))) {
             return returnMessage("error", "Email or Phone already exists");
         }
+        $temp = $password;
         $password = md5($password);
         $sql = "INSERT INTO doctors(name, email, password, profilePicture, specialization, education, phone, gender) VALUES ('$name','$email','$password','$profilePicture',$specialization,'$education','$phone','$gender')";
         mysqli_query(conn, $sql);
+        $msg = "Hi $name,<br/>Your Hashpatal Doctor - <br/>email : $email<br/>password : $temp ";
+        sendMail($email, "Your login credintial - Hashpatal", $msg);
         return returnMessage("success", "Doctor Added Successfully");
     } catch (Exception $err) {
         echo $err;
@@ -145,9 +151,12 @@ function AddAssistant($name, $email, $password, $image, $docid, $education, $pho
         if (mysqli_num_rows(mysqli_query(conn, "SELECT * FROM assistants WHERE email='$email' || phone='$phone'"))) {
             return returnMessage("error", "Email or Phone already exists");
         }
+        $temp = $password;
         $password = md5($password);
         $sql = "INSERT INTO assistants(name, email, password, profilePicture, docid, education, phone, gender) VALUES ('$name','$email','$password','$profilePicture',$docid,'$education','$phone','$gender')";
         mysqli_query(conn, $sql);
+        $msg = "Hi $name,<br/>Your Hashpatal Assistant - <br/>email : $email<br/>password : $temp ";
+        sendMail($email, "Your login credintial - Hashpatal", $msg);
         return returnMessage("success", "Assistant Added Successfully");
     } catch (Exception $err) {
         echo $err;

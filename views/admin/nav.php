@@ -4,7 +4,7 @@
         <h1>Hashpatal</h1>
     </div>
     <div class="menu-itemss">
-        <a href="/admin/add-admin"><button><?php echo $__windows ?> Dashboard</button></a>
+        <a href="/admin"><button><?php echo $__windows ?> Dashboard</button></a>
         <a href="/admin/add-admin"><button>
                 <?php echo $__add_admin ?>Add Admin</button></a>
         <a href="/admin/add-doctor"><button>

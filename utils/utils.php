@@ -7,9 +7,16 @@ function checkLogin()
             header("Location: /admin");
             die();
         }
+        if (isset($_SESSION["doctor"])) {
+            header("Location: /doctor-pannel");
+            die();
+        }
+        if (isset($_SESSION["assistant"])) {
+            header("Location: /assistant-pannel");
+            die();
+        }
     }
 }
-
 
 function mysqli_regular_array($result)
 {
@@ -25,3 +32,5 @@ function returnMessage($type, $msg)
 {
     return array($type => $msg);
 }
+
+

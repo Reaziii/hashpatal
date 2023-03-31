@@ -12,7 +12,7 @@
 a {
   text-decoration: none;
 }
-button{
+button {
   border: none;
   outline: none;
   background-color: transparent;
@@ -135,7 +135,8 @@ section {
   box-sizing: border-box;
 }
 
-input, select {
+input,
+select {
   height: 35px;
   width: 100%;
   border: 1px solid black;
@@ -172,49 +173,49 @@ input, select {
   font-weight: 200;
 }
 
+.header .dropdown .profile-pic {
+  height: 40px;
+  width: 40px;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-right: 20px;
+}
+.header .dropdown .profile-pic img {
+  height: 100%;
+  width: 100%;
+}
+.ab-xx {
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-weight: 100;
+}
+.abc-yy {
+  right: 0;
+}
 
-.header .dropdown .profile-pic{
-    height: 40px;
-    width: 40px;
-    border-radius: 30px;
-    overflow: hidden;
-    margin-right: 20px;
-}
-.header .dropdown .profile-pic img{
-    height: 100%;
-    width: 100%;
-}
-.ab-xx{
-    display: flex;
-    align-items: center;
-    border: none;
-    outline: none;
-    background-color: transparent;
-}
-.abc-yy{
-    right: 0;
-}
-
-.dash-nav{
+.dash-nav {
   width: 250px;
   height: 100vh;
   position: fixed;
-  background-color:#384846;
+  background-color: #384846;
   padding: 20px;
   box-sizing: border-box;
 }
 
-.dash-nav .logo{
+.dash-nav .logo {
   width: 100%;
   display: flex;
   align-items: center;
 }
-.dash-nav .logo img{
+.dash-nav .logo img {
   height: 40px;
   width: 40px;
   border-radius: 4px;
 }
-.dash-nav .logo h1{
+.dash-nav .logo h1 {
   font-size: 25px;
   font-weight: bold;
   margin: 0;
@@ -222,14 +223,14 @@ input, select {
   color: white;
 }
 
-.dash-nav .menu-itemss{
+.dash-nav .menu-itemss {
   display: flex;
   flex-direction: column;
   list-style: none;
   margin-top: 40px;
 }
 
-.dash-nav .menu-itemss button{
+.dash-nav .menu-itemss button {
   margin-top: 10px;
   width: 100%;
   display: flex;
@@ -243,39 +244,39 @@ input, select {
   color: white;
 }
 
-.dashboard{
+.dashboard {
   width: calc(100% - 250px);
   float: right;
   padding: 24px;
   box-sizing: border-box;
-
 }
-.dashboard .title{
+.dashboard .title {
   font-weight: bolder;
   font-size: 25px;
   color: black;
 }
 
-.dashboard .add-box{
+.dashboard .add-box {
   width: 40%;
   box-sizing: border-box;
 }
-.add-box{
+.add-box {
   margin-top: 40px;
 }
 
-.add-box input, .add-box select{
+.add-box input,
+.add-box select {
   margin-bottom: 20px;
 }
 
-.dash-nav .menu-itemss button svg{
+.dash-nav .menu-itemss button svg {
   fill: white;
   height: 20px;
   width: 20px;
   margin-right: 10px;
 }
 
-.dash-nav .profile{
+.dash-nav .profile {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -287,13 +288,13 @@ input, select {
   padding: 0 10px;
 }
 
-.dash-nav .profile img{
+.dash-nav .profile img {
   height: 40px;
   width: 40px;
   border-radius: 40px;
 }
 
-.dash-nav .profile .text p{
+.dash-nav .profile .text p {
   font-size: 12px;
   margin: 0;
   color: rgb(211, 211, 211);
@@ -301,26 +302,25 @@ input, select {
   box-sizing: border-box;
 }
 
-.dash-nav .profile a{
+.dash-nav .profile a {
   fill: white;
   height: 30px;
   width: 30px;
 }
-.dash-nav .profile a svg{
+.dash-nav .profile a svg {
   height: 100%;
   width: 100%;
 }
 
-.delete-button{
+.delete-button {
   color: #f8442e;
-
 }
-.table .action{
+.table .action {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-.form-select{
+.form-select {
   outline: none;
 }

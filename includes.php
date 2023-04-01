@@ -5,3 +5,4 @@
 <link rel="stylesheet" href="/css/style.css">
 <?php include ROOT . "/utils/svgs.php" ?>
 <script src="/js/jquery.min.js"></script>
+<script src="/js/main.js"></script>

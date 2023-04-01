@@ -17,6 +17,11 @@
         <img class="hero-pic" src="/assets/landingdoc.svg" alt="">
         <a href="/doctors">Meet Our Specialist</a>
     </section>
+    <?php include ROOT . "/views/home/services.php" ?>
+    <?php include ROOT . "/views/home/why-us.php" ?>
+    <?php include ROOT . "/views/home/message-us.php" ?>
+    <?php include ROOT . "/views/home/pageend.php" ?>
+    <?php include ROOT . "/views/footer.php" ?>
 </body>
 
 </html>

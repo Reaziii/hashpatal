@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <!-- <?php include ROOT . "/views/header.php" ?> -->
+    <?php include ROOT . "/views/header.php" ?>
     <form method="POST" action class="registration-box">
         <div class="input-div">
             <p class="level">Name</p>

@@ -69,6 +69,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         ?>
     </div>
+    <?php include ROOT . "/views/footer.php" ?>
+
 </body>
 
 </html>

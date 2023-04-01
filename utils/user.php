@@ -3,21 +3,40 @@
 function Registration($name, $email, $password, $phone, $gender, $address, $dob)
 {
     try {
-        if (mysqli_num_rows(mysqli_query(conn, "SELECT * FROM users WHERE email='$email' or phone='$phone'"))) {
+        if (mysqli_num_rows(mysqli_query(conn, "SELECT * FROM users WHERE (email='$email' or phone='$phone') and active=1"))) {
             return returnMessage("error", "Email or Phone already exists");
         }
         $password = md5($password);
         $sql = "INSERT INTO users(name, email, password, phone, gender, address, dob) VALUES('$name','$email','$password','$phone','$gender','$address','$dob')";
         mysqli_query(conn, $sql);
-        sendMail($email, "Registration Successful - Hashpatal", "Hi $name, Thank you for registration");
-        header("Location: /login");
+        $user = mysqli_fetch_array(mysqli_query(conn, "SELECT * FROM users WHERE email='$email' and password='$password'"));
+        sendVerificationCode($user["id"]);
+        header("Location: /registration/verify?email=$email");
         die();
         return returnMessage("success", "Registration Successfull");
     } catch (Exception $err) {
         return returnMessage("error", "Something went wrong");
     }
 }
-
+function sendVerificationCode($userid)
+{
+    $uid = uniqid();
+    $code = "";
+    for ($i = strlen($uid) - 1; strlen($code) != 6; $i--) {
+        $code = $code . $uid[$i];
+    }
+    $user = mysqli_fetch_array(mysqli_query(conn, "SELECT * FROM users WHERE id=$userid"));
+    $mail = $user["email"];
+    $link = HOME_URL . "/registration/verify?email=$mail&code=$code";
+    $name = $user["name"];
+    $body = "Hi $name, <br/> Your Hashpatal user verification code is : $code<br/><a href='$link'>Click here to verify</a>";
+    sendMail($mail, "Verification code - Hashpatal", $body);
+    try {
+        mysqli_query(conn, "INSERT INTO verifyCode(email, userid, code) VALUES('$mail','$userid','$code')");
+    } catch (Exception $err) {
+        // echo $err;
+    }
+}
 function userLogin()
 {
     $email = POST["email"];
@@ -29,6 +48,9 @@ function userLogin()
     $count = mysqli_num_rows($query);
     $user = mysqli_fetch_array($query);
     if ($count > 0) {
+        if ($user["active"] == 0) {
+            return "Account is not active! please <a href='/registration/verify'>verify</a>";
+        }
         $_SESSION["name"] = $user["name"];
         $_SESSION["email"] = $user["email"];
         $_SESSION["profilePicture"] = $user["profilePicture"];
@@ -96,4 +118,21 @@ function myAppointments($id)
     } catch (Exception $err) {
         return "Error";
     }
+}
+
+
+
+
+function verifyAccount($email, $code)
+{
+    $query = mysqli_query(conn, "SELECT * FROM verifyCode WHERE email='$email' and code='$code'");
+    if (mysqli_num_rows($query)) {
+        $instance = mysqli_fetch_array($query);
+        $userid = $instance["userid"];
+        mysqli_query(conn, "UPDATE users SET active=1 WHERE id='$userid'");
+        mysqli_query(conn, "DELETE FROM users WHERE email='$email' and active=0");
+        mysqli_query(conn, "DELETE FROM verifyCode WHERE email='$email'");
+        return returnMessage("success", "Verified");
+    }
+    return returnMessage("error", "Wrong verification code");
 }

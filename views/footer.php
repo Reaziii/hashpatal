@@ -63,9 +63,7 @@
                             <li><a href="/login?type=admin">Admin Login</a></li>
                             <li><a href="/login?type=doctor">Doctor Login</a></li>
                             <li><a href="/login?type=assistant">Assistant Login</a></li>
-
-
-
+                            <li><a href="/features">Features</a></li>
                         </ul>
                     </div>
                 </div>

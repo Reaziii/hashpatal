@@ -35,9 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
         if ($type == "user") {
-            if (!userLogin()) {
-                $err = "Incorrect Information";
-            }
+            $err = userLogin();
         }
     }
 }
@@ -56,15 +54,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <?php include ROOT . "/views/header.php" ?>
-    <form method="POST" action class="login-box">
-        <h1>Welcome Back!</h1>
-        <p class="error"><?php echo $err; ?></p>
-        <p class="level">Email: </p>
-        <input placeholder="Your Email Address" name="email" type="text">
-        <p class="level">Password: </p>
-        <input placeholder="Your Password" name="password" type="password">
-        <button class="button-1">Login</button>
-    </form>
+    <div class="login-div">
+        <form method="POST" action class="login-box">
+            <h1>Welcome Back!</h1>
+            <p class="error"><?php echo $err; ?></p>
+            <p class="level">Email: </p>
+            <input placeholder="Your Email Address" name="email" type="text">
+            <p class="level">Password: </p>
+            <input placeholder="Your Password" name="password" type="password">
+            <button class="button-1">Login</button>
+            <a href="/registration">
+                <p style="margin-top : 20px">Create New Account</p>
+            </a>
+        </form>
+    </div>
+    <?php include ROOT . "/views/footer.php" ?>
+
 </body>
 
 </html>

@@ -107,14 +107,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php
                 $appointments = myAppointments($user["id"]);
                 foreach ($appointments as $appointment) :
-                $doctor = getDoctorData($appointment["docid"]);
+                    $doctor = getDoctorData($appointment["docid"]);
                 ?>
                     <tr>
-                        <td><?php echo $doctor["name"]?></td>
-                        <td><?php echo $appointment["title"]?></td>
-                        <td><?php echo $appointment["date"]?></td>
-                        <td><?php echo $appointment["time"]?></td>
-                        <td><?php echo $appointment["status"]?></td>
+                        <td><?php echo $doctor["name"] ?></td>
+                        <td><?php echo $appointment["title"] ?></td>
+                        <td><?php echo $appointment["date"] ?></td>
+                        <td><?php echo $appointment["time"] ?></td>
+                        <td><?php echo $appointment["status"] ?></td>
                     </tr>
 
                 <?php endforeach; ?>
@@ -122,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </table>
     </div>
 
-
+    <?php include ROOT . "/views/footer.php" ?>
 </body>
 
 </html>

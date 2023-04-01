@@ -68,6 +68,7 @@ CREATE TABLE IF NOT EXISTS users(
     gender VARCHAR(255) NOT NULL,
     address VARCHAR(255) NOT NULL,
     dob DATE NOT NULL,
+    active BOOLEAN DEFAULT 0,
     PRIMARY KEY(id)
 );
 
@@ -82,5 +83,14 @@ CREATE TABLE IF NOT EXISTS appointments(
     status VARCHAR(10) DEFAULT "pending",
     checked int(10) DEFAULT 0,
     time VARCHAR(10) DEFAULT "00:00",
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE IF NOT EXISTS verifyCode(
+    id int(10) NOT NULL AUTO_INCREMENT,
+    email VARCHAR(255) NOT NULL,
+    userid int(10) NOT NULL,
+    FOREIGN KEY(userid) REFERENCES users(id),
+    code VARCHAR(255) NOT NULL,
     PRIMARY KEY(id)
 );

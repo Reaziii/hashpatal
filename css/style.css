@@ -134,7 +134,10 @@ section {
   padding: 40px 20px;
   box-sizing: border-box;
 }
-
+.login-div{
+  min-height: 100vh;
+  width: 100%;
+}
 input,
 select,
 textarea {
@@ -332,7 +335,7 @@ textarea {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-bottom: 10px;
+  padding-bottom: 100px;
 }
 
 .registration-box .input-div {
@@ -755,8 +758,6 @@ footer .footer-pattern img {
 footer .footer-logo {
   margin-bottom: 30px;
 }
-footer .footer-logo a{
-}
 footer .footer-logo h1{
   font-size: 21px;
   color: white;
@@ -911,4 +912,9 @@ footer .footer-menu li a {
 }
 .byy{
   background-color: #888cea;
+}
+
+.verify-email{
+  min-height: 100vh;
+  width: 100%;
 }

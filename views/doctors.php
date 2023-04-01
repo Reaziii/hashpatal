@@ -26,13 +26,15 @@ include ROOT . "/utils/doctors.php";
                     <p><?php echo $doctor["name"] ?></p>
                     <p><?php echo $doctor["specialization"] ?></p>
                     <p><?php echo $doctor["education"] ?></p>
-                    <a href="/book-appointment/<?php echo $doctor["id"]?>">Book Appoinment <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="/book-appointment/<?php echo $doctor["id"] ?>">Book Appoinment <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
 
         <?php endforeach; ?>
     </div>
+    <?php include ROOT . "/views/footer.php" ?>
+
 </body>
 
 </html>

@@ -6,7 +6,7 @@
         <h1>Hashpatal</h1>
         <ul class="menu-items">
             <li><a href="/">Home</a></li>
-            <li><a href="/">Our Doctors</a></li>
+            <li><a href="/doctors">Our Doctors</a></li>
             <li><a href="/">About Us</a></li>
             <li><a href="/">Contuct Us</a></li>
         </ul>
@@ -32,9 +32,22 @@
             </button>
             <ul class="dropdown-menu abc-yy">
                 <?php
-                if ($_SESSION["admin"]) :
+                if (isset($_SESSION["admin"])) :
                 ?>
                     <li><a class="dropdown-item" href="/admin">Admin Pannel</a></li>
+                <?php
+                elseif (isset($_SESSION["doctor"])) :
+                ?>
+                    <li><a class="dropdown-item" href="/doctor-pannel">Doctors Pannel</a></li>
+                <?php
+                elseif (isset($_SESSION["assistant"])) :
+                ?>
+                    <li><a class="dropdown-item" href="/assistant-pannel">Assistants Pannel</a></li>
+
+                <?php
+                elseif (isset($_SESSION["user"])) :
+                ?>
+                    <li><a class="dropdown-item" href="/user">Users Pannel</a></li>
                 <?php endif; ?>
                 <li><a href="/logout" class="dropdown-item" href="#">Logout</a></li>
             </ul>

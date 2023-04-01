@@ -15,6 +15,9 @@ function checkLogin()
             header("Location: /assistant-pannel");
             die();
         }
+        if (isset($_SESSION["user"])) {
+            header("Location: /user");
+        }
     }
 }
 
@@ -34,3 +37,9 @@ function returnMessage($type, $msg)
 }
 
 
+function authCheck($type){
+    if(!isset($_SESSION[$type])){
+        header("Location: /login");
+        die();
+    }
+}

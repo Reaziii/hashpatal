@@ -67,5 +67,20 @@ CREATE TABLE IF NOT EXISTS users(
     phone VARCHAR(255) NOT NULL,
     gender VARCHAR(255) NOT NULL,
     address VARCHAR(255) NOT NULL,
+    dob DATE NOT NULL,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE IF NOT EXISTS appointments(
+    id int(10) NOT NULL AUTO_INCREMENT,
+    docid int(10) NOT NULL,
+    FOREIGN KEY(docid) REFERENCES doctors(id),
+    date DATE,
+    userid int(10) NOT NULL,
+    FOREIGN KEY(userid) REFERENCES users(id),
+    title VARCHAR(255) NOT NULL,
+    status VARCHAR(10) DEFAULT "pending",
+    checked int(10) DEFAULT 0,
+    time VARCHAR(10) DEFAULT "00:00",
     PRIMARY KEY(id)
 );

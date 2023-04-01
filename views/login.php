@@ -3,6 +3,7 @@ $type = "user";
 include ROOT . '/utils/admin.php';
 include ROOT . '/utils/doctors.php';
 include ROOT . '/utils/assistant.php';
+include ROOT . '/utils/user.php';
 
 
 checkLogin();
@@ -30,6 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         if ($type == "assistant") {
             if (!assistantLogin()) {
+                $err = "Incorrect Information";
+            }
+        }
+        if ($type == "user") {
+            if (!userLogin()) {
                 $err = "Incorrect Information";
             }
         }

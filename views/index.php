@@ -7,7 +7,6 @@
     <title>Document</title>
     <?php include ROOT . '/includes.php' ?>
 </head>
-
 <body>
     <?php include ROOT . '/views/header.php' ?>
     <section class="landing-page">

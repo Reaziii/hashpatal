@@ -18,7 +18,8 @@ any("/admin/add-doctor", "views/admin/add-doctor.php");
 any("/admin/add-assistant", "views/admin/add-assistant.php");
 any("/registration", "views/user/registration.php");
 any("/registration/verify", "views/user/verifyaccount.php");
-
+any("/forgetpassword", "/views/user/forgetpassword.php");
+any("/resetpassword","views/user/resetPassword.php");
 any("/user", "views/user/index.php");
 any("/doctors", "views/doctors.php");
 any('/book-appointment/$id', "views/user/book-appointment.php");

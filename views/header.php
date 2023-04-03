@@ -8,7 +8,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="/doctors">Our Doctors</a></li>
             <li><a href="/about-us">About Us</a></li>
-            <li><a href="/">Contuct Us</a></li>
+            <li><a href="/#contuct-us">Contuct Us</a></li>
         </ul>
     </div>
 

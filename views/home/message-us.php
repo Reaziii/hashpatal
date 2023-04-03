@@ -1,4 +1,4 @@
-<section class="message-us">
+<section id="contuct-us" class="message-us">
     <div class="us-details">
         <div class="title">Leave a message</div>
         <p class="desc">Fill up the form,<br> our team will back to you in 24 hourse</p>

@@ -43,3 +43,4 @@ function authCheck($type){
         die();
     }
 }
+

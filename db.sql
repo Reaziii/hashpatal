@@ -94,3 +94,12 @@ CREATE TABLE IF NOT EXISTS verifyCode(
     code VARCHAR(255) NOT NULL,
     PRIMARY KEY(id)
 );
+
+CREATE TABLE IF NOT EXISTS resetCode(
+    id int(10) NOT NULL AUTO_INCREMENT,
+    email VARCHAR(255) NOT NULL,
+    userid int(10) NOT NULL,
+    FOREIGN KEY(userid) REFERENCES users(id),
+    code VARCHAR(255) NOT NULL,
+    PRIMARY KEY(id)
+);

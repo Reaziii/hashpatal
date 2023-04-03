@@ -136,3 +136,50 @@ function verifyAccount($email, $code)
     }
     return returnMessage("error", "Wrong verification code");
 }
+
+
+function sendResetCode($email)
+{
+    $uid = uniqid();
+    $code = "";
+    for ($i = strlen($uid) - 1; strlen($code) != 6; $i--) {
+        $code = $code . $uid[$i];
+    }
+    $user = mysqli_query(conn, "SELECT * FROM users WHERE email='$email'");
+    if (mysqli_num_rows($user) == 0) {
+        return "Email not found";
+    }
+    $user = mysqli_fetch_array($user);
+    $userid = $user["id"];
+    $link = HOME_URL . "/resetpassword?email=$email&code=$code";
+    $name = $user["name"];
+    $body = "Hi $name,<br/><a href='$link'>Click here to reset your password</a>";
+    sendMail($email, "Reset password code - Hashpatal", $body);
+    try {
+        mysqli_query(conn, "INSERT INTO resetCode(email, userid, code) VALUES('$email','$userid','$code')");
+        return "Reset code has been sent!";
+    } catch (Exception $err) {
+        // echo $err;
+        return "Email not found!";
+    }
+}
+
+
+function ResetPassword($email, $code, $password)
+{
+    $query = mysqli_query(conn, "SELECT * FROM resetCode WHERE email='$email' and code='$code'");
+    if (mysqli_num_rows($query) == 0) {
+        return  "Wrong Verfication code";
+    }
+    $instance = mysqli_fetch_array($query);
+    $password = md5($password);
+    $userid = $instance["userid"];
+    try {
+        $codeid = $instance["id"];
+        mysqli_query(conn, "UPDATE users SET password='$password' WHERE id=$userid");
+        mysqli_query(conn, "DELETE FROM resetCode WHERE id=$codeid");
+        return "Password Changed! Go to login";
+    } catch (Exception $err) {
+        return  "Something went wrong";
+    }
+}

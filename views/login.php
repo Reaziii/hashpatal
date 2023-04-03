@@ -20,19 +20,13 @@ if (isset($_GET["type"])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST["email"]) && isset($_POST["password"])) {
         if ($type == "admin") {
-            if (!adminLogin()) {
-                $err = "Incorrect Information!";
-            }
+            $err = adminLogin();
         }
         if ($type == "doctor") {
-            if (!doctorLogin()) {
-                $err = "Incorrect Information!";
-            }
+            $err = doctorLogin();
         }
         if ($type == "assistant") {
-            if (!assistantLogin()) {
-                $err = "Incorrect Information";
-            }
+            $err = assistantLogin();
         }
         if ($type == "user") {
             $err = userLogin();

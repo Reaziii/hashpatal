@@ -10,7 +10,6 @@ function adminCheck()
 function adminLogin()
 {
     $email = POST["email"];
-    echo $email;
     $password = POST["password"];
     $password = md5($password);
     $query = mysqli_query(conn, "SELECT * FROM admins WHERE email='$email' and password='$password'");

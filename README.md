@@ -20,6 +20,7 @@
         b. Verification code will be send in mail to active
         c. Change Password
         d. Request for appointment
+        e. Forget password 
 
     
 ## To start the project

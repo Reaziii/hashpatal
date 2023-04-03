@@ -40,10 +40,8 @@ function sendVerificationCode($userid)
 function userLogin()
 {
     $email = POST["email"];
-    echo $email;
     $password = POST["password"];
     $password = md5($password);
-    echo $password;
     $query = mysqli_query(conn, "SELECT * FROM users WHERE email='$email' and password='$password'");
     $count = mysqli_num_rows($query);
     $user = mysqli_fetch_array($query);
@@ -59,7 +57,7 @@ function userLogin()
         header("Location: /user");
         die();
     } else {
-        return false;
+        return "Incorrect Information";
     }
 }
 

@@ -25,7 +25,7 @@ function adminLogin()
         header("Location: /admin");
         die();
     } else {
-        return false;
+        return "Incorrect Information";
     }
 }
 

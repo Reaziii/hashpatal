@@ -19,7 +19,7 @@ function assistantLogin()
         header("Location: /assistant-pannel");
         die();
     } else {
-        return false;
+        return "Incorrect Information";
     }
 }
 

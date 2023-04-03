@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <?php include ROOT . "/views/header.php" ?>
+    <!-- <?php include ROOT . "/views/header.php" ?> -->
     <div class="login-div">
         <form method="POST" action class="login-box">
             <h1>Welcome Back!</h1>
@@ -65,6 +65,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button class="button-1">Login</button>
             <a href="/registration">
                 <p style="margin-top : 20px">Create New Account</p>
+            </a>
+            <a href="/forgetpassword">
+                <p style="margin-top : 20px">Forget Password</p>
             </a>
         </form>
     </div>

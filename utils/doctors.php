@@ -42,7 +42,7 @@ function doctorLogin()
         header("Location: /doctor-pannel");
         die();
     } else {
-        return false;
+        return "Incorrect Information";
     }
 }
 

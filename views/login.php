@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <!-- <?php include ROOT . "/views/header.php" ?> -->
+    <?php include ROOT . "/views/header.php" ?>
     <div class="login-div">
         <form method="POST" action class="login-box">
             <h1>Welcome Back!</h1>

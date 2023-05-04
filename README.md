@@ -31,6 +31,6 @@
     5. configure database with your creadintial in db.php
     6. You are done
 
-## Admin credintials (this will create automatically)
+## Admin credintials 
     email : admin@hp.com
     password : asdfasdf
